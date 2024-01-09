@@ -20,12 +20,12 @@ public class OperadorControlador {
     public List<Operador>obtenerTodos(){return operadorRepository.obtenerTodos();}
 
     @PostMapping("login")
-    public ResponseEntity<Operador>login(@RequestBody Login user){
+    public ResponseEntity login(@RequestBody Login user){
         List<Operador>users=operadorRepository.login(user.usuario ,user.clave);
         if (!users.isEmpty())
            return ResponseEntity.ok(users.get(0));
         else
-            return (ResponseEntity<Operador>) ResponseEntity.notFound();
+            return ResponseEntity.notFound().build();
     }
     @PostMapping("logout")
     public ResponseEntity logout(@RequestBody Login user){
