@@ -23,6 +23,7 @@ public class OperadorControlador {
     public ResponseEntity login(@RequestBody Login user){
         List<Operador>users=operadorRepository.login(user.usuario ,user.clave);
         if (!users.isEmpty())
+
            return ResponseEntity.ok(users.get(0));
         else
             return ResponseEntity.notFound().build();

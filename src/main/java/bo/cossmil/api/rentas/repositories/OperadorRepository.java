@@ -46,7 +46,7 @@ public class OperadorRepository implements IOperadorRepository{
             } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             }
-            data.setCodope("");
+            data.setCodope(codigo);
             data.setPasope(sha256);
             data.setPatope(resultSet.getString("patope"));
             data.setMatope(resultSet.getString("matope"));
